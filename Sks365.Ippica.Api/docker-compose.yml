@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  sks365-ippica-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${Environment}
+      - AppSettings:ConnectionStrings:Isbets=${IsbetsConnectionString}
+      - AppSettings:ConnectionStrings:Mst=${MstConnectionString}
+    build:
+      context: .
+      dockerfile: src/Sks365.Ippica.Api/Dockerfile
+    ports:
+       - '6633:80'  

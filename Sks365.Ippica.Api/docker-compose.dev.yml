@@ -1,0 +1,13 @@
+services:
+  sks365.ippica.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Dev
+    build:
+      context: .
+      dockerfile: Sks365.Ippica.Api/Dockerfile
+    ports:
+       - '6633:80'
+    #volumes:
+      #- ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      #- /C/Configs/Sks365.Ippica.Api/Dev:/__config
+  
